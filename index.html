@@ -13,7 +13,7 @@
         <a href="#page-header"><p>Header</p></a>
       </div>
       <div class="bookmark about__me">
-        <a href="#about__me"><p>About Me</p></a>
+        <a href="#about__me"><p>Rólam</p></a>
       </div>
       <div class="bookmark references">
         <a href="#references"><p>Referenciák</p></a>
@@ -28,15 +28,72 @@
         <h1 class="description who__am__i"></h1>
       </div>
       <div class="header-content">
-        <h1 class="fix">I'm good at</h1>
+        <h1 class="fix">My skills</h1>
         <h1 class="description what__i__know"></h1>
       </div>
     </header>
     <article class="about__me" id="about__me">
-      Rólam
+      <section class="past">
+        <div class="front">
+          <h2>Múlt</h2>
+        </div>
+        <div class="back">
+          <p>2004 óta foglalkozom programozással, fejlesztéssel. HTML-el kezdtem majd amikor elkezdtem érezni a korlátait, némi javascript és jQuery tudást szedtem magamra, a dinamikus tartalom megjelnítés jegyében.</p>
+          <p>Eljött a pont amikor valóban dinamikus tartalmakat szeretettem volna megjeleníteni, ekkor következett a PHP és a MySQL adatbázis.</p>
+          <p>Ezután több programozási nyelvbe is belekósoltam, mint C++, C#, Java. De velük csak egy-egy projekt erejéig foglalkoztam.</p>
+          <p>Sajnos az élet más felé szeretett volna terelni engem, és én engedtem neki.</p>
+        </div>
+      </section>
+      <section class="present">
+        <div class="front">
+          <h2>Jelen</h2>
+        </div>
+        <div class="back">
+          <p>Elérkezett a pont, ahol nem szeretnék többet sodródni az árral. Szeretném én irányítani az életemet, és azzal foglalkozni ami valóban érdekel.</p>
+          <p>2020 elején elkezdtem, és egy hónapon belül be is fejeztem a Codeberry online kurzusát egészen a HTML alapoktól, a jQuery-n át, egészen egy alap React projektig. Nagyon megfogott, hogy a javascript meddig juttot, mi mindenre jó.</p>
+          <p>Így a React is nagyon meg tetszett, és a kurzus végeztél elkezdtem jobban beleásni magam a témába. Több udemy-s kurzust is végigvittem.</p>
+          <ul>
+            <li>Complete React Developer in 2020</li>
+            <li>Build a Slack Chat App with React, Redux and Firebase</li>
+          </ul>
+          <p>És több saját projektet is készítettem a megszerzett tudással, amit a <a href="#references">Referencia</a> résznél lehet megtekiteni.</p>
+        </div>
+      </section>
+      <section class="future">
+        <div class="front">
+          <h2>Jövő</h2>
+        </div>
+        <div class="back">
+          <p>Szeretném megtalálni a helyemet egy remek csapatban. Az elején kezdeni, kérdezni, tanulni és egyre jobb lenni. Juniortól eljutni a Seniorig egy lépcsőt sem kihagyva, megdolgozva a sikerért. </p>
+          <p>Úgy felébredni minden reggel, hogy azzal foglalkozhatok amivel tényleg szeretek.</p>
+        </div>
+      </section>
     </article>
     <article class="references" id="references">
-      Referenciák
+      <section class="references_grid">
+        <div class="reference">
+          <div class="title"><h2>Crown webshop</h2></div>
+          <!-- <div class="description"><p>Ruházati webshop</p></div> -->
+          <a href="https://crown.siposmark.com" target="_blank"><img src="./assets/images/crown_reference.png"></a>  
+        </div>
+        <div class="reference">
+          <div class="title"><h2>Cards Against Humanity társasjáték</h2></div>
+          <!-- <div class="description"><p>Népszerű társaskártya játék React és firebase megoldással</p></div> -->
+          <a href="https://cah.siposmark.com" target="_blank"><img src="./assets/images/cah_reference.png"></a>
+        </div>
+        <div class="reference">
+          <div class="title"><h2>Névjegy kártya</h2></div>
+          <a href="https://siposmark.com" target="_blank"><img src="./assets/images/business_reference.png"></a>  
+        </div>
+        <div class="reference">
+          <div class="title"><h2>Todo Alkalmazás</h2></div>
+          <a href="https://todo.siposmark.com" target="_blank"><img src="./assets/images/todo_reference.png"></a>
+        </div>
+        <div class="reference">
+          <div class="title"><h2>Esküvői oldal</h2></div>
+          <a href="https://sipizork.github.io/wedding/" target="_blank"><img src="./assets/images/wedding_reference.png"></a>  
+        </div>
+      </section>
     </article>
     <article class="contacts" id="contacts">
       Kapcsolat
@@ -44,5 +101,6 @@
   </div>
   <script src="header.js"></script>
   <script src="bookmarks.js"></script>
+  <script src="gridsize.js"></script>
 </body>
 </html>

@@ -4,22 +4,6 @@ const WhatIKnow = document.querySelector('.what__i__know');
 const whoAmIDesc = ['SipiZork', 'Sipos Márk', 'Frontend Developer'];
 const whatIKnowDesc = ['HTML', 'CSS', 'Javscript', 'React', 'Firebase', 'Git', 'Adobe XD', 'jQuery'];
 
-// let offset = 0;
-// let loopCounter = 0;
-// while(loopCounter < 100)
-// whoAmIDesc.forEach(data => {
-//   setTimeout(() => {
-//     setTimeout(() => {
-//       whoAmI.innerText = data;
-//     }, 1000);
-//     setTimeout(() => {
-//       whoAmI.style.top = '100px';
-//     }, 2000);
-//   }, 3000 + offset);
-//   offset += 3000;
-//   loopCounter++;
-// })
-
 let offset = 0;
 let offset2 = 250;
 for (let loopCounter = 0; loopCounter < 500; loopCounter++) {
