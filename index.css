@@ -73,7 +73,6 @@ article.about__me {
 }
 
 article.about__me section {
-  
   flex-basis: 28vw;
   border: 1px solid rgba(112, 112, 112, 0.603);
   margin: 0 1rem;
@@ -91,11 +90,13 @@ article.about__me section {
   position: absolute;
   transition: all .6s;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   text-align: justify;
   scrollbar-width: none;
+}
+
+.back-content {
+  margin: auto;
 }
 
 
@@ -111,16 +112,21 @@ article.about__me section {
 
 .front h2 {
   font-size: 3rem;
+  margin: auto;
 }
 
 .back {
   transform: perspective(3000px) rotateY(180deg);
   padding: 1.5rem;
   font-size: 1.2rem;
+  
 }
 
 .back p, ul {
   margin-bottom: 20px;
+}
+.back p:nth-last-child(1) {
+  margin-bottom: 0px;
 }
 
 .back ul {
@@ -152,7 +158,6 @@ article.references section {
 }
 
 article.references .reference {
-  border: 1px solid;
   cursor: pointer;
   overflow: hidden;
   position: relative;
