@@ -130,7 +130,13 @@ article.about__me section {
 }
 
 .back ul {
-  padding-left: 20px;
+  list-style-type: "-";
+  padding-left: 30px;
+}
+
+.back ul li {
+  padding-left: 10px;
+  margin-bottom: 5px;
 }
 
 .back a {
