@@ -194,6 +194,13 @@ article.references .reference .title {
   transition: all .4s;
 }
 
+article.references .reference a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 article.references .reference .description {
   width: 100%;
   height: 100%;
@@ -234,6 +241,88 @@ article.references .reference:nth-child(2),
 article.references .reference:nth-child(4),
 article.references .reference:nth-child(5) {
   grid-column: span 2;
+}
+
+article.contacts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+article.contacts .contact,
+article.contacts .media {
+  border: 1px solid black;
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article.contacts .media .media--icons--wrapper {
+  border: 1px solid red;
+  width: 80%;
+}
+
+article.contacts .media .media--icons--wrapper .media-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: black;
+}
+
+article.contacts .media .media--icons--wrapper .media-icon .icon {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BC986A;
+}
+
+article.contacts .media .media--icons--wrapper .media-icon:hover .icon {
+  transform: scale(1.3) rotate(360deg);
+}
+
+article.contacts .media .media--icons--wrapper .media-icon:hover .icon.facebook,
+article.contacts .media .media--icons--wrapper .media-icon:hover .title.facebook {
+  color: aqua;
+}
+
+article.contacts .media .media--icons--wrapper .media-icon:hover .icon.linkedin,
+article.contacts .media .media--icons--wrapper .media-icon:hover .title.linkedin {
+  color: cornflowerblue;
+}
+
+article.contacts .media .media--icons--wrapper .media-icon:hover .icon.github,
+article.contacts .media .media--icons--wrapper .media-icon:hover .title.github {
+  color: white;
+}
+
+article.contacts .media .media--icons--wrapper .media-icon:hover .icon.codepen,
+article.contacts .media .media--icons--wrapper .media-icon:hover .title.codepen {
+  color: cornsilk;
+}
+
+
+article.contacts .media .media--icons--wrapper .media-icon:hover .title {
+  width: 80%;
+  left: 10px;
+} 
+
+article.contacts .media .media--icons--wrapper .media-icon .icon {
+  float: left;
+  transition: all .5s ease-in-out;
+  color: black;
+  position: relative;
+  z-index: 5;
+}
+
+article.contacts .media .media--icons--wrapper .media-icon .title {
+  overflow: hidden;
+  width: 0px;
+  position: relative;
+  left: -40px;
+  transition: all .5s ease-in-out;
 }
 
 .about__me {
