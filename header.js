@@ -2,7 +2,7 @@ const whoAmI = document.querySelector('.who__am__i');
 const WhatIKnow = document.querySelector('.what__i__know');
 
 const whoAmIDesc = ['SipiZork', 'Sipos Márk', 'Frontend Developer'];
-const whatIKnowDesc = ['HTML', 'CSS', 'Javscript', 'React', 'Firebase', 'Git', 'Adobe XD', 'jQuery'];
+const whatIKnowDesc = ['HTML', 'CSS', 'Javascript', 'React', 'Firebase', 'Git', 'Adobe XD', 'jQuery'];
 
 let offset = 0;
 let offset2 = 250;
