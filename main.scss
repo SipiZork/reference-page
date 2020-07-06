@@ -23,9 +23,12 @@ a {
   .bookmarks {
     position: fixed;
     left: 0;
-    width: 7rem;
     top: 100px;
     z-index: 10;
+
+    @media(max-width: 750px) {
+      display: none;
+    }
 
     .bookmark {
       border-radius: 0 1.3rem 1.3rem 0;
@@ -34,7 +37,6 @@ a {
       cursor: pointer;
       color: black;
       transform: translateX(-3.5rem);
-      height: 2rem;
       text-align: center;
       font-size: 1.2rem;
       line-height: 2rem;
@@ -85,7 +87,6 @@ a {
   header {
     width: 100%;
     height: 100vh;
-    min-height: 970px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,16 +94,38 @@ a {
     background-color: #659DBD;
     color: #fff;
 
+    @media(max-width: 970px) {
+      float: none;
+    }
+
     .header-content {
       min-width: 900px;
       font-size: 2rem;
       margin: 1.25rem 0;
       overflow: hidden;
 
+      @media(max-width: 970px) {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+      }
+
+      @media(max-width: 550px) {
+        font-size: 1rem;
+      }
+
       .fix {
         width: 18rem;
         padding-right: 1rem;
         float:left;
+
+        @media(max-width: 970px) {
+          width: 100%;
+          float: none;
+          padding-right: 0;
+          text-align: center;
+        }
       }
 
       .description {
@@ -117,14 +140,19 @@ a {
 
   article {
     width: 100%;
-    height: 100vh;
     min-height: 970px;
 
     &.about__me {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: row;
       background-color: #FBEEC1;
+
+      @media(max-width: 1390px){
+        flex-direction: column;
+        justify-content: flex-start;
+      }
 
       section {
         flex-basis: 28vw;
@@ -134,6 +162,14 @@ a {
         perspective: 3000px;
         transition: all .4s;
         box-shadow: 10px 10px 30px rgba(112, 112, 112, 0.603);
+
+        @media(max-width: 1390px){
+          min-height: 0;
+          height: auto;
+          width: 80%;
+          margin: 10px 0;
+          flex: 1;
+        }
 
         &:hover > .front {
           transform: perspective(3000px) rotateY(180deg);
@@ -223,6 +259,14 @@ a {
         grid-gap: .5rem;
         grid-auto-flow: dense;
 
+        @media(max-width: 1390px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media(max-width: 1100px) {
+          grid-template-columns: 1fr;
+        }
+
         .reference {
           cursor: pointer;
           overflow: hidden;
@@ -241,17 +285,32 @@ a {
           }
 
           &:nth-child(2),
-          &:nth-child(4),
+          &:nth-child(4) {
+            grid-column: span 2;
+
+            @media(max-width: 1390px) {
+              grid-column: span 1;
+            }
+          }
+
           &:nth-child(5) {
             grid-column: span 2;
+
+            @media(max-width: 1100px) {
+              grid-column: span 1;
+            }
           }
 
           img {
             object-fit: cover;
             width: 100%;
             height: 100%;
-            transition: all 4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 4s cubic-bezier(0.165, 0.84, 0.44, 1);
             object-position: 0 0;
+
+            @media(max-width: 1300px) {
+              object-position: 50% 50%;
+            }
           }
 
           .title {
@@ -269,6 +328,14 @@ a {
             z-index: 2;
             font-size: 2rem;
             transition: all .4s;
+
+            @media(max-width: 1390px) {
+              font-size: 1.3rem;
+            }
+
+            @media(max-width: 1100px) {
+              font-size: 1rem;
+            }
           }
 
           a {
@@ -308,14 +375,27 @@ a {
       justify-content: center;
       align-items: center;
       background-color: #BC986A;
+      min-height: 100vh;
 
       .contact,
       .media {
-        width: 40%;
+        width: 45%;
         height: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media(max-width: 1100px) {
+          width: 60%;
+        }
+
+        @media(max-width: 750px) {
+          width: 70%;
+        }
+
+        @media(max-width: 500px) {
+          width: 90%;
+        }
 
         .media--icons--wrapper {
           width:100%;
@@ -325,6 +405,14 @@ a {
             margin-bottom: 30px;
             cursor: pointer;
             color: black;
+
+            @media(max-width: 1100px) {
+              font-size: 4rem;
+            }
+
+            @media(max-width: 650px) {
+              font-size: 3rem;
+            }
 
             &:hover {
               .icon {

@@ -34,9 +34,14 @@ a {
 .wrapper .bookmarks {
   position: fixed;
   left: 0;
-  width: 7rem;
   top: 100px;
   z-index: 10;
+}
+
+@media (max-width: 750px) {
+  .wrapper .bookmarks {
+    display: none;
+  }
 }
 
 .wrapper .bookmarks .bookmark {
@@ -48,7 +53,6 @@ a {
   color: black;
   -webkit-transform: translateX(-3.5rem);
           transform: translateX(-3.5rem);
-  height: 2rem;
   text-align: center;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -100,7 +104,6 @@ a {
 .wrapper header {
   width: 100%;
   height: 100vh;
-  min-height: 970px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,6 +121,12 @@ a {
   color: #fff;
 }
 
+@media (max-width: 970px) {
+  .wrapper header {
+    float: none;
+  }
+}
+
 .wrapper header .header-content {
   min-width: 900px;
   font-size: 2rem;
@@ -125,10 +134,39 @@ a {
   overflow: hidden;
 }
 
+@media (max-width: 970px) {
+  .wrapper header .header-content {
+    min-width: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper header .header-content {
+    font-size: 1rem;
+  }
+}
+
 .wrapper header .header-content .fix {
   width: 18rem;
   padding-right: 1rem;
   float: left;
+}
+
+@media (max-width: 970px) {
+  .wrapper header .header-content .fix {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+    text-align: center;
+  }
 }
 
 .wrapper header .header-content .description {
@@ -142,7 +180,6 @@ a {
 
 .wrapper article {
   width: 100%;
-  height: 100vh;
   min-height: 970px;
 }
 
@@ -156,7 +193,23 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   background-color: #FBEEC1;
+}
+
+@media (max-width: 1390px) {
+  .wrapper article.about__me {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .wrapper article.about__me section {
@@ -171,6 +224,18 @@ a {
   transition: all .4s;
   -webkit-box-shadow: 10px 10px 30px rgba(112, 112, 112, 0.603);
           box-shadow: 10px 10px 30px rgba(112, 112, 112, 0.603);
+}
+
+@media (max-width: 1390px) {
+  .wrapper article.about__me section {
+    min-height: 0;
+    height: auto;
+    width: 80%;
+    margin: 10px 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 .wrapper article.about__me section:hover > .front {
@@ -276,6 +341,20 @@ a {
   grid-auto-flow: dense;
 }
 
+@media (max-width: 1390px) {
+  .wrapper article.references section {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .wrapper article.references section {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .wrapper article.references section .reference {
   cursor: pointer;
   overflow: hidden;
@@ -295,8 +374,24 @@ a {
   opacity: 1;
 }
 
-.wrapper article.references section .reference:nth-child(2), .wrapper article.references section .reference:nth-child(4), .wrapper article.references section .reference:nth-child(5) {
+.wrapper article.references section .reference:nth-child(2), .wrapper article.references section .reference:nth-child(4) {
   grid-column: span 2;
+}
+
+@media (max-width: 1390px) {
+  .wrapper article.references section .reference:nth-child(2), .wrapper article.references section .reference:nth-child(4) {
+    grid-column: span 1;
+  }
+}
+
+.wrapper article.references section .reference:nth-child(5) {
+  grid-column: span 2;
+}
+
+@media (max-width: 1100px) {
+  .wrapper article.references section .reference:nth-child(5) {
+    grid-column: span 1;
+  }
 }
 
 .wrapper article.references section .reference img {
@@ -304,10 +399,19 @@ a {
      object-fit: cover;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: -webkit-transform 4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: -webkit-transform 4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 4s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-object-position: 0 0;
      object-position: 0 0;
+}
+
+@media (max-width: 1300px) {
+  .wrapper article.references section .reference img {
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
 }
 
 .wrapper article.references section .reference .title {
@@ -332,6 +436,18 @@ a {
   font-size: 2rem;
   -webkit-transition: all .4s;
   transition: all .4s;
+}
+
+@media (max-width: 1390px) {
+  .wrapper article.references section .reference .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .wrapper article.references section .reference .title {
+    font-size: 1rem;
+  }
 }
 
 .wrapper article.references section .reference a {
@@ -382,11 +498,12 @@ a {
       -ms-flex-align: center;
           align-items: center;
   background-color: #BC986A;
+  min-height: 100vh;
 }
 
 .wrapper article.contacts .contact,
 .wrapper article.contacts .media {
-  width: 40%;
+  width: 45%;
   height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -397,6 +514,27 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .wrapper article.contacts .contact,
+  .wrapper article.contacts .media {
+    width: 60%;
+  }
+}
+
+@media (max-width: 750px) {
+  .wrapper article.contacts .contact,
+  .wrapper article.contacts .media {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper article.contacts .contact,
+  .wrapper article.contacts .media {
+    width: 90%;
+  }
 }
 
 .wrapper article.contacts .contact .media--icons--wrapper,
@@ -410,6 +548,20 @@ a {
   margin-bottom: 30px;
   cursor: pointer;
   color: black;
+}
+
+@media (max-width: 1100px) {
+  .wrapper article.contacts .contact .media--icons--wrapper .media-icon,
+  .wrapper article.contacts .media .media--icons--wrapper .media-icon {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .wrapper article.contacts .contact .media--icons--wrapper .media-icon,
+  .wrapper article.contacts .media .media--icons--wrapper .media-icon {
+    font-size: 3rem;
+  }
 }
 
 .wrapper article.contacts .contact .media--icons--wrapper .media-icon:hover .icon,

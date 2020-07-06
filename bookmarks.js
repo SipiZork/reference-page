@@ -35,7 +35,7 @@ addBookMarks = () => {
   } else {
     referencesBookmark.classList.remove('visible');
   }
-  if (window.scrollY < (window.innerHeight * 3) - 260 || window.scrollY > (window.innerHeight * 4) - 200 ) {
+  if (window.scrollY < headerHeight + aboutMeHeight + referencesHeight - 260) {
     contactsBookmark.classList.add('visible');
   } else {
     contactsBookmark.classList.remove('visible');
