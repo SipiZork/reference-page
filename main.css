@@ -181,15 +181,121 @@ a {
 .wrapper article {
   width: 100%;
   min-height: 970px;
+  /*&.about__me {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      background-color: #FBEEC1;
+
+      @media(max-width: 1390px){
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      section {
+        flex-basis: 28vw;
+        border: 1px solid rgba(112, 112, 112, 0.603);
+        margin: 0 1rem;
+        min-height: 70vh;
+        perspective: 3000px;
+        transition: all .4s;
+        box-shadow: 10px 10px 30px rgba(112, 112, 112, 0.603);
+
+        @media(max-width: 1390px){
+          min-height: 0;
+          height: auto;
+          width: 80%;
+          margin: 10px 0;
+          flex: 1;
+        }
+
+        &:hover > .front {
+          transform: perspective(3000px) rotateY(180deg);
+        }
+
+        &:hover > .back {
+          transform: perspective(3000px) rotateY(360deg);
+        }
+
+        .front,.back {
+          width: 100%;
+          height: 100%;
+          overflow-Y: scroll;
+          backface-visibility: hidden;
+          position: absolute;
+          transition: all .6s;
+          display: flex;
+          flex-direction: column;
+          text-align: justify;
+          scrollbar-width: none;
+        }
+
+        .front {
+          transform: perspective(3000px) rotateY(0deg);
+          cursor: pointer;
+
+          img {
+            position: absolute;
+            z-index: 0;
+            object-position: center;
+            object-fit: cover;
+            opacity: .3;
+            width: 100%;
+            height: 100%;
+          }
+          
+          h2 {
+            position: relative;
+            font-size: 3rem;
+            margin: auto;
+            z-index: 2;
+          }
+        }
+
+        .back {
+          transform: perspective(3000px) rotateY(180deg);
+          padding: 1.5rem;
+          font-size: 1.2rem;
+
+          .back-content {
+            margin: auto;
+          }
+
+          p, ul {
+            margin-bottom: 20px;
+          }
+
+          a {
+            color: #659DBD;
+          }
+
+          ul {
+            list-style-type: "-";
+            padding-left: 30px;
+
+            li {
+              padding-left: 10px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .front::-webkit-scrollbar,
+        .back::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+    }*/
 }
 
 .wrapper article.about__me {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -213,118 +319,85 @@ a {
 }
 
 .wrapper article.about__me section {
-  -ms-flex-preferred-size: 28vw;
-      flex-basis: 28vw;
-  border: 1px solid rgba(112, 112, 112, 0.603);
-  margin: 0 1rem;
-  min-height: 70vh;
-  -webkit-perspective: 3000px;
-          perspective: 3000px;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-  -webkit-box-shadow: 10px 10px 30px rgba(112, 112, 112, 0.603);
-          box-shadow: 10px 10px 30px rgba(112, 112, 112, 0.603);
+  width: 28vw;
+  min-height: 50vh;
+  position: relative;
+  border: 1px solid #1d1d1d;
 }
 
-@media (max-width: 1390px) {
-  .wrapper article.about__me section {
-    min-height: 0;
-    height: auto;
-    width: 80%;
-    margin: 10px 0;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
+.wrapper article.about__me section:hover .face.face1 {
+  -webkit-transform: scale(0.4) translateY(-150%);
+          transform: scale(0.4) translateY(-150%);
 }
 
-.wrapper article.about__me section:hover > .front {
-  -webkit-transform: perspective(3000px) rotateY(180deg);
-          transform: perspective(3000px) rotateY(180deg);
+.wrapper article.about__me section:hover .face.face2 {
+  height: auto;
 }
 
-.wrapper article.about__me section:hover > .back {
-  -webkit-transform: perspective(3000px) rotateY(360deg);
-          transform: perspective(3000px) rotateY(360deg);
+.wrapper article.about__me section img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  opacity: .3;
 }
 
-.wrapper article.about__me section .front, .wrapper article.about__me section .back {
+.wrapper article.about__me section .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.wrapper article.about__me section .face.face1 {
   width: 100%;
   height: 100%;
-  overflow-Y: scroll;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  position: absolute;
-  -webkit-transition: all .6s;
-  transition: all .6s;
+  z-index: 5;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: justify;
-  scrollbar-width: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.wrapper article.about__me section .front {
-  -webkit-transform: perspective(3000px) rotateY(0deg);
-          transform: perspective(3000px) rotateY(0deg);
-  cursor: pointer;
-}
-
-.wrapper article.about__me section .front img {
-  position: absolute;
-  z-index: 0;
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: .3;
-  width: 100%;
-  height: 100%;
-}
-
-.wrapper article.about__me section .front h2 {
-  position: relative;
+.wrapper article.about__me section .face.face1 h2 {
   font-size: 3rem;
-  margin: auto;
-  z-index: 2;
+  z-index: 6;
+  color: white;
 }
 
-.wrapper article.about__me section .back {
-  -webkit-transform: perspective(3000px) rotateY(180deg);
-          transform: perspective(3000px) rotateY(180deg);
-  padding: 1.5rem;
+.wrapper article.about__me section .face.face2 {
+  margin: 4rem 2rem;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid red;
+}
+
+.wrapper article.about__me section .face.face2 .content {
   font-size: 1.2rem;
 }
 
-.wrapper article.about__me section .back .back-content {
-  margin: auto;
-}
-
-.wrapper article.about__me section .back p, .wrapper article.about__me section .back ul {
+.wrapper article.about__me section .face.face2 .content p, .wrapper article.about__me section .face.face2 .content ul {
   margin-bottom: 20px;
 }
 
-.wrapper article.about__me section .back a {
+.wrapper article.about__me section .face.face2 .content a {
   color: #659DBD;
 }
 
-.wrapper article.about__me section .back ul {
+.wrapper article.about__me section .face.face2 .content ul {
   list-style-type: "-";
   padding-left: 30px;
 }
 
-.wrapper article.about__me section .back ul li {
+.wrapper article.about__me section .face.face2 .content ul li {
   padding-left: 10px;
   margin-bottom: 5px;
-}
-
-.wrapper article.about__me section .front::-webkit-scrollbar,
-.wrapper article.about__me section .back::-webkit-scrollbar {
-  width: 0;
 }
 
 .wrapper article.references {
